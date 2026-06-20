@@ -1,98 +1,87 @@
 # Gitautoworks
-My automated git hub uploader.
 
+> auto_sync.py — Hourly pull all locally-cloned Viper repos + log to telemetry.db. Runs as Task Scheduler job: Viper\AutoSync every 60 minutes.
 
-# --- FOUNDRY v10.2 RESTORATION & EXPANSION ---
-# Gitautoworks
-================
+*Auto-generated 2026-06-20 03:55 from source — branch `main`, 4 Python modules, 5 other files.*
 
-## Overview
-Gitautoworks is a comprehensive system designed to streamline Git workflow automation. This documentation provides an in-depth guide on setting up and utilizing the system.
+## Architecture
 
-## ASCII Architecture
 ```
-├── .git/
-├── README.md
-├── src/
-│   ├── main.py
-│   ├── utils.py
-│   └── models.py
-├── tests/
-│   ├── test_main.py
-│   ├── test_utils.py
-│   └── test_models.py
-├── requirements.txt
-├── LICENSE
-└── CHANGELOG.md
+  .director_payload.md
+  .gitignore
+  Blueprint.md
+  CHANGELOG.md
+  PROJECT_LOG.md
+  README.md
+  src/
+    auto_sync.py
+    main.py
+    utils.py
+  tests/
+    test_main.py
 ```
 
-## Visual Badges
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Build Status](https://img.shields.io/badge/Build-Passing-green.svg)](https://github.com/chrisalunlloyd2-sudo/Gitautoworks/actions)
-[![Version](https://img.shields.io/badge/Version-1.0.0-red.svg)](https://github.com/chrisalunlloyd2-sudo/Gitautoworks/releases)
+## Dependencies
 
-## Deep Dive Descriptions
-Gitautoworks is designed to automate various Git workflows, including repository initialization, commit management, and issue tracking. The system consists of multiple components, each responsible for a specific task.
+External packages imported by this project:
 
-### Why Gitautoworks?
-Gitautoworks aims to simplify the Git workflow process, reducing the time and effort required to manage repositories. By automating repetitive tasks, developers can focus on more critical aspects of their projects.
+`git`
 
-## Axiomatic Breakdowns
-The system can be broken down into the following functional axioms:
+## How to run
 
-* **UI**: User interface for interacting with the system
-* **DB**: Database management for storing repository data
-* **State**: State management for tracking repository status
-* **API**: API for integrating with external services
+Executable entry points (have a `__main__` block):
 
-## Multi-Platform Setups
-### Windows Setup
-1. Install Python 3.10+ from [python.org](https://www.python.org/)
-2. Open PowerShell
-3. Run: `pip install -r requirements.txt`
-4. Execute: `python src/main.py`
+- `python src/auto_sync.py`
+- `python src/main.py`
+- `python tests/test_main.py`
 
-### Android Setup (Termux)
-1. Install Termux from the Google Play Store
-2. Run: `pkg install python git`
-3. Run: `pip install -r requirements.txt`
-4. Execute: `python src/main.py`
+## Modules
 
-## Data Flow Chart
+### `src/auto_sync.py`
+
+auto_sync.py — Hourly pull all locally-cloned Viper repos + log to telemetry.db.
+Runs as Task Scheduler job: Viper\AutoSync every 60 minutes.
+
+- `sync_repo(path, name, dry)`
+- `sync_all(dry)`
+- `report()`
+
+### `src/main.py`
+
+- `main()`
+
+### `src/utils.py`
+
+- `initialize_repository()`
+- `manage_commits()`
+- `track_issues()`
+
+## Public API index
+
+| Module | Function | Signature |
+|--------|----------|-----------|
+| `auto_sync` | `report` | `report()` |
+| `auto_sync` | `sync_all` | `sync_all(dry)` |
+| `auto_sync` | `sync_repo` | `sync_repo(path, name, dry)` |
+| `main` | `main` | `main()` |
+| `utils` | `initialize_repository` | `initialize_repository()` |
+| `utils` | `manage_commits` | `manage_commits()` |
+| `utils` | `track_issues` | `track_issues()` |
+
+## Status
+
+- Branch: `main`
+- Last commit: 2026-06-19 20:57:05 -0600
+- File types: .md ×5
+
+### Recent commits
 ```
-                                      +---------------+
-                                      |  User Input  |
-                                      +---------------+
-                                             |
-                                             |
-                                             v
-                                      +---------------+
-                                      |  Gitautoworks  |
-                                      |  (Main Script)  |
-                                      +---------------+
-                                             |
-                                             |
-                                             v
-                                      +---------------+
-                                      |  Repository    |
-                                      |  Initialization |
-                                      +---------------+
-                                             |
-                                             |
-                                             v
-                                      +---------------+
-                                      |  Commit Management|
-                                      +---------------+
-                                             |
-                                             |
-                                             v
-                                      +---------------+
-                                      |  Issue Tracking  |
-                                      +---------------+
+c1b9875 [Moe autonomous] Gitautoworks 2026-06-19 20:57
+2a3bddf feat(sync): add auto_sync.py — hourly pull all repos, Task Scheduler registered
+f75c07c Enterprise: Automated Project Sync
+51dff40 Initial commit
+845fcde Initial commit
 ```
 
-## ROADMAP
-[Visual Roadmap](https://github.com/chrisalunlloyd2-sudo/Gitautoworks/blob/main/ROADMAP.md)
-
-## CHANGELOG
-[Changelog](https://github.com/chrisalunlloyd2-sudo/Gitautoworks/blob/main/CHANGELOG.md)
+---
+*README generated by `readme_generator.py` (Viper). Deterministic — derived from source, not LLM prose.*
