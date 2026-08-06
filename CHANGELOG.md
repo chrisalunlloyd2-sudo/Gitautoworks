@@ -3,8 +3,8 @@
 All notable changes to this project.
 
 ## 2026-08
-- **[Changed]** [Moe autonomous] Gitautoworks 2026-08-06 15:12 ($hash)
 - **[Docs]** docs: auto-update [skip-docs] ($hash)
+- **[Changed]** [Moe autonomous] Gitautoworks 2026-08-06 15:12 ($hash)
 - **[Docs]** docs: auto-update [skip-docs] ($hash)
 - **[Docs]** docs: auto-update [skip-docs] ($hash)
 - **[Docs]** docs: auto-update [skip-docs] ($hash)
