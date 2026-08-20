@@ -4,6 +4,7 @@ from utils import initialize_repository, manage_commits, track_issues
 
 def main():
     # Initialize repository
+    """Main (function)."""
     initialize_repository()
 
     # Manage commits
