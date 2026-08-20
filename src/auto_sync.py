@@ -47,6 +47,10 @@ def _tele(results: list[dict]):
 
 
 def sync_repo(path: str, name: str, dry: bool = False) -> dict:
+    """Sync repo.
+
+    Args: path, name, dry.
+    """
     result = {"name": name, "path": path, "status": "SKIP", "detail": ""}
 
     if not os.path.isdir(os.path.join(path, ".git")):
@@ -86,6 +90,10 @@ def sync_repo(path: str, name: str, dry: bool = False) -> dict:
 
 
 def sync_all(dry: bool = False) -> list[dict]:
+    """Sync all.
+
+    Args: dry.
+    """
     _log(f"=== AUTO-SYNC {'(DRY) ' if dry else ''}=== {datetime.now():%Y-%m-%d %H:%M}")
     results = []
     if not os.path.isdir(PROJS):
@@ -113,6 +121,7 @@ def sync_all(dry: bool = False) -> list[dict]:
 
 
 def report():
+    """Report (function)."""
     try:
         con  = sqlite3.connect(TELE_DB)
         rows = con.execute(
